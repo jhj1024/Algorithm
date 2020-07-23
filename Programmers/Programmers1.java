@@ -1,7 +1,7 @@
 package com.ssafy.java.day3.ws;
 
 import java.util.HashMap;
-//프로그래머스) 완주하지 못한 선수
+//프로그래머스:) 완주하지 못한 선수
 public class Programmers1 {
 	
     public static String solution(String[] participant, String[] completion) {
