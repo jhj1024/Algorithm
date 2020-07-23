@@ -1,6 +1,6 @@
 package com.ssafy.java.day3.ws;
 
-//프로그래머스) 가운데 글자 가져오기
+//프로그래머스:) 가운데 글자 가져오기
 public class Programmers5 {
 
     public static String solution(String s) {
