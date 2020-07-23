@@ -1,6 +1,6 @@
 package com.ssafy.java.day3.ws;
 
-//프로그래머스) 서울에서 김서방 찾기
+//프로그래머스:) 서울에서 김서방 찾기
 public class Programmers6 {
     public static String solution(String[] seoul) {
     	String answer = "";
