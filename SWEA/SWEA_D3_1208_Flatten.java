@@ -1,5 +1,3 @@
-package com.ssafy.algo.d0728.ws;
-
 import java.util.Arrays;
 import java.util.StringTokenizer;
 import java.io.BufferedReader;
