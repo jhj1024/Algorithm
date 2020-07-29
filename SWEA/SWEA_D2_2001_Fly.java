@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 * @link https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PzOCKAigDFAUq&categoryId=AV5PzOCKAigDFAUq&categoryType=CODE
 * @mem
 * @time
-* @caution M x M 윈도우 탐색으로 가장 많은 파리 죽이기!
+* @caution M x M 윈도우 탐색으로 가장 많은 파리 죽이기
 * [고려사항] 
 * [입력사항]
 * [출력사항]

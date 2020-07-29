@@ -9,7 +9,7 @@ import java.util.Arrays;
 * @link https://www.acmicpc.net/problem/2309
 * @mem
 * @time
-* @caution 일곱난쟁이의 합이 100일때, 9명의 난쟁이에서 진짜 일곱난쟁이의 키를 오름차순으로 출력해라. 
+* @caution 일곱난쟁이의 합이 100일때, 9명의 난쟁이에서 진짜 일곱난쟁이의 키를 오름차순으로 출력. 
 * [고려사항] 
 * [입력사항]
 * [출력사항]
