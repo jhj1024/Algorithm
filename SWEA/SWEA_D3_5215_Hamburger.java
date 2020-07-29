@@ -1,9 +1,5 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.StringTokenizer;
 
 /**
@@ -22,10 +18,11 @@ import java.util.StringTokenizer;
 public class SWEA_D3_5215_Hamburger {
     static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     static int T, N, L;
+    static int[] point;
+    static int[] kcal;
     static int Answer;
-
+    
     public static void main(String[] args) throws Exception {
-        //input = new BufferedReader(new StringReader(src));
         T = Integer.parseInt(input.readLine());
 
         StringTokenizer tokens = null;
@@ -36,8 +33,8 @@ public class SWEA_D3_5215_Hamburger {
             L = Integer.parseInt(tokens.nextToken());
 
             // 각 재료의 점수와 칼로리 입력
-            int[] point = new int[N];
-            int[] kcal = new int[N];
+            point = new int[N];
+            kcal = new int[N];
             for (int i = 0; i < N; i++) {
                 tokens = new StringTokenizer(input.readLine(), " ");
                 point[i] = Integer.parseInt(tokens.nextToken()); // 재료 점수
@@ -46,24 +43,21 @@ public class SWEA_D3_5215_Hamburger {
 
             /* --------------------- 알고리즘  --------------------- */
             Answer = 0;
-            
-            //*부분집합 만드는 알고리즘을 응용함. 1~N개의 요소를 가지는 모든 부분집합 생성
-            List<Integer> list = new ArrayList<>(); // 점수합을 저장하는 리스트
-            for (int i = 0; i < (1 << N); i++) {
-                int sump = 0, sumk = 0;
-                for (int j = 0; j < N; j++) {
-                    if ((i & (1 << j)) > 0) {
-                        sump += point[j]; // 점수 합하기
-                        sumk += kcal[j]; // 칼로리 합하기
-                    }
-                }
-                if (sumk <= L) {
-                    list.add(sump); // 제한 칼로리를 넘지 않으면 리스트에 저장
-                }
-            }
-            Answer = Collections.max(list); // 리스트에서 최대값 구하기
+            CalPoint(0, 0, 0); //점수&칼로리 계산
             System.out.printf("#%d %d\n", test_case, Answer);
         }
-
     }
+    
+    //재귀를 이용하여 칼로리 계산
+    public static void CalPoint(int sump, int sumk, int idx) {
+    	if(sumk > L) return;
+    	if(idx == N) {
+    		Answer = Answer < sump ? sump : Answer; //비교하여 큰 점수를 Answer에 저장
+    		return;
+    	}
+    	CalPoint(sump, sumk, idx+1);//해당 재료 추가 안함
+    	CalPoint(sump+point[idx], sumk+kcal[idx], idx+1); //해당 재료 추가
+    	
+    }
+    
 }
