@@ -1,7 +1,8 @@
+package com.ssafy.algo.d0730.ws;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -13,7 +14,7 @@ import java.util.StringTokenizer;
 * @mem
 * @time
 * @caution 
-* [고려사항] N장의 카드에서 3장을 골라 M보다 같거나 작으면서 최대한 가까운 수 만들기(조합)
+* [고려사항] N장의 카드에서 3장을 골라 M보다 같거나 작은 수 중 최대값 만들기(조합)
 * [입력사항]
 * [출력사항]
 */
@@ -37,24 +38,18 @@ public class BOJ_B2_2798_BlackJack {
         }
         
         /* --------------------------- 알고리즘 --------------------------- */
-        makeCombination(3, 0, nums, new int[3]);
-        
-        int min = Integer.MAX_VALUE;
-        Collections.sort(list); //정렬
-        for(int i = 0; i < list.size(); i++) {
-            if(M >= list.get(i) && ((M - list.get(i)) < min)) {
-                Answer = list.get(i);
-                min = M - list.get(i); //(M - 총합)이 가장 작은 수 구하기
-            }
-        }
+        Answer = 0;
+        makeCombination(3, 0, nums, new int[3]); //3개의 수를 고르는 조합   
         System.out.println(Answer);
     }
     
-  //3장을 뽑는 조합 만들기. 단, 뽑은 3개의 숫자를 저장하는 것이 아닌 뽑은 3개의 숫자의 합을 반환한다.
+  //3장을 뽑는 조합 만들기. 단, 뽑은 3개의 숫자를 저장하는 것이 아닌 뽑은 3개의 숫자의 합을 생각한다.
     static void makeCombination(int r, int start, int[] nums, int[] temp) {
-        if (r == 0) {
+    	if (r == 0) {
             int sum = temp[0] + temp[1] + temp[2];
-            list.add(sum); //합 저장
+            if(sum <= M && sum > Answer) { //수의 합이 M보다 작거나 같지만 Answer보다 크면 Answer에 저장
+            	Answer = sum;
+            }
             return;
         }
         for (int i = start; i < nums.length; i++) {
