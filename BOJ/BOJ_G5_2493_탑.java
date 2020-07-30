@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 * @link https://www.acmicpc.net/problem/2493
 * @mem
 * @time
-* @caution
+* @caution pair 자료형을 생성하여 탑 번호와 높이 저장하기
 * [고려사항] 
 * [입력사항]
 * [출력사항]
