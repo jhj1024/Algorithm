@@ -1,7 +1,5 @@
-package com.ssafy.java.day3.ws;
-
 //프로그래머스:) 모의고사
-public class Programmers2 {
+public class Programmers_모의고사 {
 	
 	public static int[] solution(int[] answers) {
 	    int[] mathone = {1,2,3,4,5};
