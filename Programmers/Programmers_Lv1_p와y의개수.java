@@ -1,5 +1,3 @@
-package com.ssafy.algo.d0731;
-
 /**
 * @author JUNG
 * @name Programmers_Lv1_문자열 내 p와 y의 개수

@@ -1,5 +1,3 @@
-package com.ssafy.algo.d0731;
-
 /**
 * @author JUNG
 * @name Programmers_Lv1_수박수박수박수박수박수?

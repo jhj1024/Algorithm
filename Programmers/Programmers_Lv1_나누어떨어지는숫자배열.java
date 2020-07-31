@@ -1,5 +1,3 @@
-package com.ssafy.algo.d0731;
-
 import java.util.Arrays;
 
 /**
