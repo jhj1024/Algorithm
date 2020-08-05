@@ -4,7 +4,7 @@ import java.io.StringReader;
 
 /**
 * @author JUNG
-* @name 1954 달팽이 숫자
+* @name 1954 달팽이 숫자 
 * @date 2020.07.28
 * @link https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PobmqAPoDFAUq&categoryId=AV5PobmqAPoDFAUq&categoryType=CODE#;return%20false;
 * @mem

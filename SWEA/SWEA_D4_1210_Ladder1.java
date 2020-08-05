@@ -7,7 +7,7 @@ import java.io.StringReader;
 /**
  * @author JUNG
  * @name SWEA D4 1210 Ladder1
- * @data 2020.07.28
+ * @data 2020.07.28 
  * @link https://swexpertacademy.com/main/talk/solvingClub/problemView.do?solveclubId=AXOJsQN67-MDFAXS&contestProbId=AV14ABYKADACFAYh&probBoxId=AXOSG8Ga1tEDFAXS&type=PROBLEM&problemBoxTitle=0728&problemBoxCnt=2
  * @mem
  * @time

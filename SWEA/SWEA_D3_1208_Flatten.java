@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 //algo 단축어 만들기
 /**
  * @author JUNG
- * @name SWEA D3 1208 Flatten
+ * @name SWEA D3 1208 Flatten 
  * @data 2020.07.28
  * @link https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV139KOaABgCFAYh
  * @mem
