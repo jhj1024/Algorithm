@@ -1,6 +1,6 @@
 import java.util.Arrays;
 //프로그래머스:) K번째 수 
-public class Programmers_K번째 수 {
+public class Programmers_Lv1_K번째 수 {
     public static int[] solution(int[] array, int[][] commands) {
         int N = commands.length;
     	int[] answer = new int[N];

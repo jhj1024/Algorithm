@@ -1,5 +1,5 @@
 //프로그래머스:) 서울에서 김서방 찾기 
-public class Programmers_서울에서 김서방 찾기 {
+public class Programmers_Lv1_서울에서 김서방 찾기 {
     public static String solution(String[] seoul) {
     	String answer = "";
     	for(int i = 0; i < seoul.length; i++){
