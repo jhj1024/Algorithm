@@ -5,7 +5,7 @@ import java.io.StringReader;
 /**
 * @author JUNG
 * @name BOJ_B2_2577_숫자의 개수
-* @date 2020.07.29
+* @date 2020.07.29 
 * @link https://www.acmicpc.net/problem/2577
 * @mem
 * @time

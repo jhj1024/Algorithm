@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 /**
 * @author JUNG
 * @name BOJ_B2_3052_나머지
-* @date 2020.07.29
+* @date 2020.07.29 
 * @link https://www.acmicpc.net/problem/3052
 * @mem
 * @time
