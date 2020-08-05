@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 /**
  * @author JUNG
  * @name 상호의 배틀필드
- * @date 2020.07.29
+ * @date 2020.07.29 
  * @link https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5LyE7KD2ADFAXc&categoryId=AV5LyE7KD2ADFAXc&categoryType=CODE
  * @mem
  * @time

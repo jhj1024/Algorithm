@@ -5,7 +5,7 @@ import java.util.StringTokenizer;
 /**
  * @author JUNG
  * @name SWEA_D3_5215_햄버거 다이어트
- * @date 2020.07.29
+ * @date 2020.07.29 
  * @link https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWT-lPB6dHUDFAVT&categoryId=AWT-lPB6dHUDFAVT&categoryType=CODE
  * @mem
  * @time

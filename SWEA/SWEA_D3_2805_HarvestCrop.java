@@ -5,7 +5,7 @@ import java.io.StringReader;
 /**
 * @author JUNG
 * @name SWEA_D3_2805_농작물 수확하기
-* @date 2020.07.29
+* @date 2020.07.29 
 * @link https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV7GLXqKAWYDFAXB
 * @mem
 * @time
