@@ -1,4 +1,4 @@
-//프로그래머스:) 모의고사
+//프로그래머스:) 모의고사 
 public class Programmers_모의고사 {
 	
 	public static int[] solution(int[] answers) {

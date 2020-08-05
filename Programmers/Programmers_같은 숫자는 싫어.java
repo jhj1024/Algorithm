@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-//프로그래머스:) 같은 숫자는 싫어
+//프로그래머스:) 같은 숫자는 싫어 
 public class Programmers_같은 숫자는 싫어 {
     public static int[] solution(int []arr) {
         int[] answer = {};
