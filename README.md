@@ -7,6 +7,7 @@
 * 0803 SWEA2, BOJ1  
 * 0804 SWEA2, BOJ1, JUNGOL1    
 * 0805 BOJ4, Programmers2  
+* 0806 SWEA1, BOJ2  
 
 
   
