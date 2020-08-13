@@ -1,3 +1,5 @@
+package com.ssafy.java.d0813;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.StringReader;
@@ -55,16 +57,11 @@ public class SWEA_D0_2382_미생물격리 {
                 cnt = Integer.parseInt(tokens.nextToken()); //미생물 수
                 dir = Integer.parseInt(tokens.nextToken()); //이동 방향
                 queue.offer(new Microbe(c, r, cnt, dir));
+                Answer += cnt;
             }
                         
             //알고리즘           
             move();
-            Answer = 0;
-            while(!queue.isEmpty()) {
-                Microbe m = queue.poll();
-                Answer += m.cnt;
-            }
-            
             output.append("#").append(tc).append(" ").append(Answer).append("\n");
         }
         System.out.println(output);
@@ -84,7 +81,8 @@ public class SWEA_D0_2382_미생물격리 {
                 m.c += dirs[m.dir][1];
                 
                 if(m.r == 0 || m.r == N-1 || m.c == 0 || m.c == N-1) { //약품이 있는 위치면 절반 타노스하고 방향만 바꾸기
-                    m.cnt = m.cnt/2; //절반 죽고 살아난 녀석만 저장                    
+                	Answer -= (m.cnt - m.cnt/2); //죽은 녀석 빼기                	
+                	m.cnt = m.cnt/2; //절반 죽고 살아난 녀석만 저장                    
                     if(m.cnt == 0) { //미생물이 모두 죽으면
                         continue; //check에 안넣고 건너뛰기
                     }
