@@ -7,6 +7,19 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+/**
+* @author JUNG
+* @name BOJ_G4_2206_벽부수고이동하기
+* @date 
+* @link https://www.acmicpc.net/problem/2206
+* @mem
+* @time
+* @caution
+* [고려사항] 
+* [입력사항]
+* [출력사항]
+*/
+
 public class BOJ_G4_2206_벽부수고이동하기 {
     static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer tokens = null;
