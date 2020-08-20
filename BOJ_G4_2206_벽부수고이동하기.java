@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 
 /**
 * @author JUNG
-* @name BOJ_G4_2206_벽부수고이동하기
+* @name BOJ_G4_2206_벽부수고이동하기 
 * @date 
 * @link https://www.acmicpc.net/problem/2206
 * @mem
