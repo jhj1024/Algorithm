@@ -20,7 +20,8 @@
 * 0820 BOJ1  
 * 0821 SWEA1  
 * 0824 오늘은 쉽니다  
-* 0825 SWEA1, BOJ3    
+* 0825 SWEA1, BOJ3 
+* 0826 BOJ3   
   
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
