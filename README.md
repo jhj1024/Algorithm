@@ -23,8 +23,9 @@
 * 0825 SWEA1, BOJ3 
 * 0826 BOJ3   
 * 0827 SWEA2, BOJ2  
+* 0828 SWEA2, BOJ1   
   
-TOTAL: 77  
+TOTAL: 80  
 
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
