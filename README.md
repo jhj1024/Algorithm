@@ -24,9 +24,9 @@
 * 0826 BOJ3   
 * 0827 SWEA2, BOJ2  
 * 0828 SWEA2, BOJ2   
-* 0831 오늘도 쉴까요?
+* 0831 BOJ 3  
   
-TOTAL: 81  
+TOTAL: 84  
 
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
