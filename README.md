@@ -35,9 +35,10 @@
 * 0909 Programmers2  
 * 0910 Programmers3  
 * 0911 BOJ1  
-* 0914 오늘은 쉽니다
-  
-TOTAL: 120  
+* 0914 오늘은 쉽니다  
+* 0915 BOJ1   
+ 
+TOTAL: 121  
 
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
