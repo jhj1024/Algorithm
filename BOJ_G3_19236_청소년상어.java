@@ -65,13 +65,16 @@ public class BOJ_G3_19236_청소년상어 {
         moveQ[map[0][0].num] = null; //잡아먹힌 물고기는 이동리스트에서 삭제
         map[0][0] = null; //잡아먹힌 물고기는 맵에서 삭제
 
-        do {
-            moveFish();//물고기 이동            
-        }while(moveShark()); //상어 이동이 실패할때까지 반복
+        youthShark();
 
 
         //출력
         System.out.println(Answer);
+    }
+
+    public static void youthShark() {
+        // TODO Auto-generated method stub
+        
     }
 
     public static boolean moveShark() {
