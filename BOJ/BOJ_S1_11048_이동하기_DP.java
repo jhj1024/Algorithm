@@ -6,12 +6,9 @@ import java.util.StringTokenizer;
 /**
 * @author JUNG
 * @name BOJ_S1_11048_이동하기
-* @date 2020.08.19
+* @date 2020.09.23
 * @link https://www.acmicpc.net/problem/11048
-* @mem
-* @time
-* @caution 
-* [고려사항] 
+
 * [입력사항] 가로 크기 M, 세로 크기 N / N*M 크기의 미로의 상태
 * [출력사항] (N, M)으로 이동할 때 가져올 수 있는 사탕 개수의 최댓값\
 * 
@@ -22,7 +19,7 @@ public class BOJ_S1_11048_이동하기_DP {
     static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder output = new StringBuilder();
     static StringTokenizer tokens = null;
-    static int Answer, R, C;
+    static int R, C;
     static int[][] map;
     static int[][] dirs = {{1, 0}, {0, 1}};
     
@@ -42,26 +39,32 @@ public class BOJ_S1_11048_이동하기_DP {
             }
         }
 
-        dp();     
-        System.out.println(Answer);
-    }
-
-    static void dp() {
-        int[][] dp = new int[R+1][C+1];
-
-        dp[1][1] = map[1][1];
-
-        for (int i = 1; i <= R; i++) {
-           for (int j = 1; j <= C; j++) {
-              dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]) + map[i][j];
-           }
+        //알고리즘
+        for(int i = 1; i <= R; i++) {
+            for(int j = 1; j <= C; j++) {
+                map[i][j] = map[i][j] + Math.max(map[i-1][j], map[i][j-1]);
+            }
         }
-
-        Answer = dp[R][C];    
+        
+        //출력
+        System.out.println(map[R][C]);
     }
 
-    static String src = "3 3\r\n" + 
-    		"0 0 100\r\n" + 
-    		"1 1 0\r\n" + 
-    		"1 1 0";
+    static String src = 
+            "3 4\r\n" + 
+            "1 2 3 4\r\n" + 
+            "0 0 0 5\r\n" + 
+            "9 8 7 6"; //31
+    
+    //    "3 3\r\n" + 
+    //    "1 0 0\r\n" + 
+    //    "0 1 0\r\n" + 
+    //    "0 0 1"; //3
+    //    
+    //    "4 3\r\n" + 
+    //    "1 2 3\r\n" + 
+    //    "6 5 4\r\n" + 
+    //    "7 8 9\r\n" + 
+    //    "12 11 10"; //47
+    
 }
