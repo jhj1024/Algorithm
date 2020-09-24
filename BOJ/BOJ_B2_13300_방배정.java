@@ -1,5 +1,3 @@
-package com.ssafy.algo.d0923;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.StringReader;
@@ -20,16 +18,13 @@ import java.util.StringTokenizer;
 * 
 */
 
-
 public class BOJ_B2_13300_방배정 {
     static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer tokens = null;
     static int N, K, Answer;
     static int[][] students;
     
-    public static void main(String[] args) throws Exception{
-        input = new BufferedReader(new StringReader(src));
-        
+    public static void main(String[] args) throws Exception{        
         //입력
         tokens = new StringTokenizer(input.readLine());
         N = Integer.parseInt(tokens.nextToken());
@@ -67,28 +62,5 @@ public class BOJ_B2_13300_방배정 {
         //출력
         System.out.println(Answer);
     }
-
-    static String src = 
-            "3 3\r\n" + 
-            "0 3\r\n" + 
-            "1 5\r\n" + 
-            "0 6"; //3
-    
-//            "16 2\r\n" + 
-//            "1 1\r\n" + 
-//            "0 1\r\n" + 
-//            "1 1\r\n" + 
-//            "0 2\r\n" + 
-//            "1 2\r\n" + 
-//            "0 2\r\n" + 
-//            "0 3\r\n" + 
-//            "1 3\r\n" + 
-//            "1 4\r\n" + 
-//            "1 3\r\n" + 
-//            "1 3\r\n" + 
-//            "0 6\r\n" + 
-//            "1 5\r\n" + 
-//            "0 5\r\n" + 
-//            "1 5\r\n" + 
-//            "1 6"; //12
 }
+
