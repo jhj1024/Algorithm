@@ -19,7 +19,7 @@
 * 0819 SWEA1  
 * 0820 BOJ1  
 * 0821 SWEA1  
-* 0824 오늘은 쉽니다  
+* 0824 오늘은 쉽니다(PJT)  
 * 0825 SWEA1, BOJ3 
 * 0826 BOJ3   
 * 0827 SWEA2, BOJ2  
@@ -35,7 +35,7 @@
 * 0909 Programmers2  
 * 0910 Programmers3  
 * 0911 BOJ1  
-* 0914 오늘은 쉽니다  
+* 0914 오늘은 쉽니다(PJT)  
 * 0915 BOJ1   
 * 0916 BOJ1   
 * 0917 BOJ1   
@@ -44,6 +44,7 @@
 * 0922 BOJ5 
 * 0923 BOJ7 
 * 0924 BOJ7 
+* 0925 오늘은 쉽니다(IM시험)  
 
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
