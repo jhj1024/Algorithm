@@ -46,7 +46,7 @@
 * 0924 BOJ7 
 * 0925 오늘은 쉽니다(IM시험)  
 * 0928 SWEA1  
-* 0929 오늘도 쉴까요?  
+* 0929 BOJ4  
 
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
