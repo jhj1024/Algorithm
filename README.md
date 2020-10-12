@@ -53,8 +53,9 @@
 * 1005 BOJ1  
 * 1006 BOJ5  
 * 1007 BOJ5   
-* 1008  
-* 1009  
+* 1008 BOJ  
+* 1009 BOJ  
+* 1012 BOJ   
 
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
