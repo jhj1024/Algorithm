@@ -67,6 +67,7 @@
 * 1023 BOJ1  
 * 1026 BOJ1  
 * 1027 BOJ  
+* 1028
 
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
