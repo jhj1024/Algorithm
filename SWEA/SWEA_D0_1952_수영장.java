@@ -1,5 +1,3 @@
-package com.ssafy.d1028;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -14,6 +12,8 @@ import java.util.StringTokenizer;
  * [출력사항] 수영장을 이용하는 경우 중 가장 적게 지출하는 비용
  * 
  * 이용권 종류: 1일 이용권, 1달 이용권, 3달 이용권, 1년 이용권
+ * 
+ * >>dp를 이용하면 빠르게 풀 수 있다.
  */
 
 public class SWEA_D0_1952_수영장 {
@@ -21,19 +21,17 @@ public class SWEA_D0_1952_수영장 {
     static StringTokenizer tokens = null;
     static StringBuilder output = new StringBuilder();
     static int T, Answer;
-    static int[] ticket, months;
+    static int[] ticket, months, dp;
 
     public static void main(String[] args) throws Exception {
         T = Integer.parseInt(input.readLine());
 
         for (int t = 1; t <= T; t++) {
             // 입력
-            int days = 0;
             ticket = new int[4]; // 각 이용 요금
             tokens = new StringTokenizer(input.readLine());
             for (int i = 0; i < ticket.length; i++) {
                 ticket[i] = Integer.parseInt(tokens.nextToken());
-                days += ticket[i];
             }
 
             months = new int[12]; // 1월부터 12월
@@ -43,47 +41,27 @@ public class SWEA_D0_1952_수영장 {
             }
 
             // 알고리즘
-            Answer = Math.min(ticket[3], days * ticket[0]); // 일단 1년치 vs 모두 1일치
-            calc();
+            Answer = Integer.MAX_VALUE;
+            
+            dp = new int[12+3]; //3달치 비교를 위해 12+3 길이 사용
+            int oneDay, oneMonth, threeMonths;
+            for(int i = 3; i < 15; i++) {
+                oneDay = months[i-3]*ticket[0]; //1일권
+                oneMonth = ticket[1]; //1달권
+                threeMonths = ticket[2]; //3달권
+                
+                dp[i] = Math.min(Math.min(dp[i-1]+oneDay, dp[i-1]+oneMonth), dp[i-3]+threeMonths); //이전 금액에 1일권, 1달권, 3달권을 더했을 때 가장 작은 금액 저장
+            }
 
+            Answer = Math.min(dp[14], ticket[3]); //1년치와 비교
+            
+            //결과 저장
             output.append("#").append(t).append(" ").append(Answer).append("\n");
         }
 
+        //출력
         System.out.println(output);
     }
-
-    public static void calc() {
-        int[] dp1M = new int[12];
-
-        int sum = 0;
-        for (int i = 0; i < 12; i++) {
-            dp1M[i] = Math.min(months[i] * ticket[0], ticket[1]); //1일권과 한달권 비교
-            sum += dp1M[i];
-        }
-
-        Answer = Math.min(Answer, sum);
-        
-        int[] dp3M = new int[12];
-        for(int i = 0; i < 12; i++) {
-            if(i == 11) {
-                dp3M[i] = dp1M[i];
-            }else if(i == 10) {
-                dp3M[i] = dp1M[i] + dp1M[i+1];
-            }else {
-                dp3M[i] = dp1M[i] + dp1M[i+1] + dp1M[i+2];
-            }
-            
-            dp3M[i] = Math.min(dp3M[i], ticket[2]); //3달권과 1일권or1달권 비교           
-        }
-
-        
-        
-        
-        
-        Answer = Math.min(Answer, sum);
-
-    }
-
 }
 
 
