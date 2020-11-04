@@ -1,5 +1,3 @@
-package com.ssafy.algo.d1104;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.LinkedList;

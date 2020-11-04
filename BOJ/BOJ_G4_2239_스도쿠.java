@@ -1,24 +1,20 @@
-package com.ssafy.algo.d1104;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * @author JUNG
- * @name BOJ_G4_2580_스도쿠
+ * @name BOJ_G4_2239_스도쿠
  * @date 2020.11.04
- * @link https://www.acmicpc.net/problem/2580
+ * @link https://www.acmicpc.net/problem/2239
  * 
  * [입력사항] 9*9 크기의 보드 정보
  * [출력사항] 9개의 줄에 9개의 숫자로 답을 출력(답이 여러 개 있다면 그 중 사전식으로 앞서는 것을 출력)
  */
 
-public class BOJ_G4_2580_스도쿠 {
+public class BOJ_G4_2239_스도쿠 {
     static BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-    static StringTokenizer tokens = null;
     static StringBuilder output = new StringBuilder();
     static int N = 9;
     static int[][] map;
@@ -29,9 +25,9 @@ public class BOJ_G4_2580_스도쿠 {
         blanks = new ArrayList<Point>();
         map = new int[N][N];
         for (int i = 0; i < N; i++) {
-            tokens = new StringTokenizer(input.readLine());
+            String line = input.readLine();
             for (int j = 0; j < N; j++) {
-                map[i][j] = Integer.parseInt(tokens.nextToken());
+                map[i][j] = line.charAt(j) - '0';
                 if (map[i][j] == 0) {
                     blanks.add(new Point(i, j));
                 }
@@ -47,7 +43,7 @@ public class BOJ_G4_2580_스도쿠 {
             // 출력
             for (int[] m : map) {
                 for (int n : m) {
-                    output.append(n).append(" ");
+                    output.append(n);
                 }
                 output.append("\n");
             }
