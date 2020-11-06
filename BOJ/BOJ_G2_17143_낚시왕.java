@@ -1,10 +1,5 @@
-package com.ssafy.algo.d1106;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 import java.util.StringTokenizer;
 
 /**
@@ -34,7 +29,7 @@ public class BOJ_G2_17143_낚시왕 {
     static StringTokenizer tokens = null;
     static int R, C, N, Answer;
     static int[][] map;
-    static Map<Integer, Shark> sharks;
+    static Shark[] sharks;
 
     public static void main(String[] args) throws Exception {
         // 입력
@@ -45,7 +40,7 @@ public class BOJ_G2_17143_낚시왕 {
 
         int r, c, s, d, z;
         map = new int[R + 1][C + 1];
-        sharks = new HashMap<>();
+        sharks = new Shark[N + 1];
         for (int i = 1; i <= N; i++) {
             tokens = new StringTokenizer(input.readLine());
             r = Integer.parseInt(tokens.nextToken());
@@ -54,8 +49,8 @@ public class BOJ_G2_17143_낚시왕 {
             d = Integer.parseInt(tokens.nextToken());
             z = Integer.parseInt(tokens.nextToken());
 
-            sharks.put(z, new Shark(r, c, s, d, z));
-            map[r][c] = z;
+            sharks[i] = new Shark(r, c, s, d, z);
+            map[r][c] = i;
         }
 
         // 알고리즘
@@ -72,10 +67,10 @@ public class BOJ_G2_17143_낚시왕 {
     public static void check(int c) {
         for (int i = 1; i <= R; i++) {
             if (map[i][c] > 0) {
-                Answer += map[i][c]; // 낚시꾼이 잡은 상어의 크기 합 증가
+                Answer += sharks[map[i][c]].z; // 낚시꾼이 잡은 상어의 크기 합 증가
 
                 // 상어 삭제
-                sharks.remove(map[i][c]);
+                sharks[map[i][c]] = null;
                 map[i][c] = 0;
 
                 break;
@@ -87,47 +82,68 @@ public class BOJ_G2_17143_낚시왕 {
     public static void move() {
         int[][] dirs = {{0, 0}, {-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
-        
-        
-        for (int i : sharks.keySet()) { // 상어 정보 업데이트
-            Shark shark = sharks.get(i);
-
-            map[shark.r][shark.c] = 0;
-
-            for (int s = 1; s <= shark.s; s++) {
-                if (!isIn(shark.r + dirs[shark.d][0], shark.c + dirs[shark.d][1])) {
-                    if (shark.d % 2 == 0) {
-                        shark.d--;
-                    } else {
-                        shark.d++;
-                    }
-                }
-
-                shark.r += dirs[shark.d][0];
-                shark.c += dirs[shark.d][1];
+        for (int i = 1; i <= N; i++) { // 상어 정보 업데이트
+            if (sharks[i] == null) {
+                continue; // 잡아먹힌 상어
             }
 
-            sharks.put(shark.z, new Shark(shark.r, shark.c, shark.s, shark.d, shark.z)); // 상어 업데이트
+            Shark shark = sharks[i];
+
+            map[shark.r][shark.c] = 0; //원래 위치 삭제
+
+            int s = shark.s;
+            while(true) { //맵을 벗어나지 않고 이동하는 날이 올 때까지
+                if (!isIn(shark.r + dirs[shark.d][0]*s, shark.c + dirs[shark.d][1]*s)) { //이렇게 가면 범위를 벗어나요                   
+                    switch (shark.d) {
+                        case 1:
+                            s -= (shark.r - 1); //범위를 벗어나기 직전까지 이동
+                            shark.r = 1; //그러면 (1, shark.c)에 위치하게됨
+                            shark.d++; //방향 전환
+                            break;
+                        case 2:
+                            s -= (R-shark.r); //범위를 벗어나기 직전까지 이동
+                            shark.r = R; //그러면 (R, shark.c)에 위치하게됨
+                            shark.d--; //방향 전환
+                            break;
+                        case 3:
+                            s -= (C-shark.c); //범위를 벗어나기 직전까지 이동
+                            shark.c = C; //그러면 (shark.r, C)에 위치하게됨
+                            shark.d++; //방향 전환
+                            break;
+                        case 4:
+                            s -= (shark.c - 1); //범위를 벗어나기 직전까지 이동
+                            shark.c = 1; //그러면 (shark.r, 1)에 위치하게됨
+                            shark.d--; //방향 전환
+                            break;
+                    }
+                }else { //드디어 범위를 벗어나지 않고 이동했어요
+                    shark.r += dirs[shark.d][0]*s;
+                    shark.c += dirs[shark.d][1]*s;
+                    break;
+                }
+            }
+
+            sharks[i] = new Shark(shark.r, shark.c, shark.s, shark.d, shark.z); // 상어 업데이트
         }
 
         // 한 칸에 여러 상어가 있으면 제일 큰 상어가 나머지 잡아먹기
-        
-        Set<Integer> keySet = sharks.keySet();
-        for (int i : keySet) {
-            Shark cur = sharks.get(i);
-            
-            if (map[cur.r][cur.c] != 0) { // 이미 다른상어가 있다면
-                int cmp = map[cur.r][cur.c];
+        for (int cur = 1; cur <= N; cur++) {
+            if (sharks[cur] == null) {
+                continue; // 잡아먹힌 상어
+            }
 
-                if (cmp < cur.z) { // 들어오려는 상어가 더 크면
+            if (map[sharks[cur].r][sharks[cur].c] != 0) { // 이미 다른상어가 있다면
+                int cmp = map[sharks[cur].r][sharks[cur].c];
+
+                if (sharks[cmp].z < sharks[cur].z) { // 들어오려는 상어가 더 크면
                     // 잡아먹기
-                    sharks.remove(cmp);
-                    map[cur.r][cur.c] = cur.z;
+                    sharks[cmp] = null;
+                    map[sharks[cur].r][sharks[cur].c] = cur;
                 } else { // 작으면
-                    sharks.remove(i);// 사라지기
+                    sharks[cur] = null; //상어 삭제
                 }
             } else {
-                map[cur.r][cur.c] = cur.z;
+                map[sharks[cur].r][sharks[cur].c] = cur;
             }
         }
     }
