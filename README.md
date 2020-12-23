@@ -108,7 +108,8 @@
 * 1218  
 * 1221  
 * 1222  
-* 1223
+* 1223  
+* 1224  
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
 git config --global user.email jhjung1402@gmail.com  
