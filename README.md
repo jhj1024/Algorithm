@@ -117,6 +117,7 @@
 * 0101 새해 복 많이 받으세요!  
 * 0104 첫출근  
 * 0105  
+* 0106  
 커밋이 반영되지 않으면(잔디가 심어지지 않으면) git bash 에서 다음의 명령어 입력:  
 git config user.email jhjung1402@gmail.com  
 git config --global user.email jhjung1402@gmail.com  
